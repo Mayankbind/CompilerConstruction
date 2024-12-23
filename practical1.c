@@ -3,6 +3,7 @@
 
 int main() {
     // Write C code here
+    printf("hello");
     char str[50];
     printf("Enter the string: ");
     scanf("%s",str);
