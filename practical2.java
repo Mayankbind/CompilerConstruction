@@ -62,6 +62,23 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 2 to z -> 2
 abcdefghijklmnopqrstuvwxyz
 
+2
+0 1
+5
+1
+1
+4
+1 0 2
+1 1 4
+2 1 3
+2 0 5
+3 0 5
+3 1 4
+4 1 4
+4 0 2
+5 0 5
+5 1 5
+
 */
 
 class practical2 {
@@ -107,19 +124,19 @@ class practical2 {
             acceptingStates.add(scanner.nextInt());
         }
 
-        System.out.println("State table (format: <from> <symbol> <to>):");
+        System.out.println("State table: ");
         ArrayList<State> States = new ArrayList<>();
         scanner.nextLine();
         for (int i = 0; i < numStates * inputSymbols.size(); i++) {
         // for (int i = 0; i < 11; i++) {
-            // String[] parts = scanner.nextLine().split(" ");
-            String line = scanner.nextLine();
-            // int from = Integer.parseInt(parts[0]);
-            int from = Integer.parseInt(Character.toString(line.charAt(0)));
-            // char symbol = parts[1].charAt(0);
-            Character symbol = line.charAt(5);
-            // int to = Integer.parseInt(parts[2]);
-            int to = Integer.parseInt(Character.toString(line.charAt(10)));
+            String[] parts = scanner.nextLine().split(" ");
+            // String line = scanner.nextLine();
+            int from = Integer.parseInt(parts[0]);
+            // int from = Integer.parseInt(Character.toString(line.charAt(0)));
+            char symbol = parts[1].charAt(0);
+            // Character symbol = line.charAt(5);
+            int to = Integer.parseInt(parts[2]);
+            // int to = Integer.parseInt(Character.toString(line.charAt(10)));
             States.add(new State(from, symbol, to));
         }
 
